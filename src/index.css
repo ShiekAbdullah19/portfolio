@@ -1,0 +1,394 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body{
+  background: linear-gradient(to right, #000000, #0f172a);
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+  width: 100%;
+  padding: 20px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: transparent;
+}
+
+.logo{
+  font-size: 32px;
+  font-weight: bold;
+  color: cyan;
+  text-shadow: 0px 0px 10px cyan;
+}
+
+.nav-links{
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.nav-links a{
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover{
+  color: cyan;
+  text-shadow: 0px 0px 10px cyan;
+}
+
+.menu-icon{
+  display: none;
+  font-size: 35px;
+  color: white;
+  cursor: pointer;
+}
+
+/* ================= HERO ================= */
+
+.container{
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 120px 80px;
+  flex-wrap: wrap;
+}
+
+.left h1{
+  font-size: 80px;
+  margin-bottom: 20px;
+}
+
+.left h2{
+  font-size: 45px;
+  margin-bottom: 30px;
+}
+
+.left button{
+  padding: 15px 40px;
+  border: none;
+  border-radius: 10px;
+  background: cyan;
+  color: black;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.left button:hover{
+  transform: scale(1.05);
+  box-shadow: 0px 0px 20px cyan;
+}
+
+.right img{
+  width: 350px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 25px cyan;
+}
+
+/* ================= ABOUT ================= */
+
+.about{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  text-align: center;
+}
+
+.about h1{
+  font-size: 60px;
+  margin-bottom: 30px;
+}
+
+.about p{
+  width: 70%;
+  font-size: 24px;
+  line-height: 1.8;
+}
+
+/* ================= SKILLS ================= */
+
+.skills{
+  min-height: 100vh;
+  padding: 100px 50px;
+  text-align: center;
+}
+
+.skills h1{
+  font-size: 60px;
+  margin-bottom: 50px;
+}
+
+.skills-container{
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.skill-card{
+  background: #111827;
+  padding: 30px 50px;
+  border-radius: 15px;
+  font-size: 24px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.skill-card:hover{
+  transform: translateY(-10px);
+  background: cyan;
+  color: black;
+}
+
+/* ================= PROJECTS ================= */
+
+.projects{
+  min-height: 100vh;
+  padding: 100px 50px;
+  text-align: center;
+}
+
+.projects h1{
+  font-size: 60px;
+  margin-bottom: 50px;
+}
+
+.projects-container{
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.project-card{
+  background: #111827;
+  width: 350px;
+  padding: 30px;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.project-card:hover{
+  transform: translateY(-10px);
+}
+
+.project-card img{
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.project-card h2{
+  margin-bottom: 20px;
+}
+
+.project-card p{
+  font-size: 18px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.project-buttons{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.project-buttons button{
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: cyan;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.project-buttons button:hover{
+  transform: scale(1.05);
+  box-shadow: 0px 0px 15px cyan;
+}
+
+/* ================= CONTACT ================= */
+
+.contact{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.contact h1{
+  font-size: 60px;
+  margin-bottom: 40px;
+}
+
+.contact-form{
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form button{
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background: cyan;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover{
+  transform: scale(1.05);
+  box-shadow: 0px 0px 20px cyan;
+}
+
+.contact-form input,
+.contact-form textarea{
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+.contact-form textarea{
+  height: 150px;
+  resize: none;
+}
+
+
+
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+  .navbar{
+    padding: 20px;
+  }
+
+  .menu-icon{
+    display: block;
+  }
+
+  .nav-links{
+    position: absolute;
+    top: 80px;
+    right: -100%;
+    flex-direction: column;
+    background: #111827;
+    width: 220px;
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.4s;
+  }
+
+  .nav-links.active{
+    right: 20px;
+  }
+
+  .container{
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 50px;
+    padding: 120px 20px;
+  }
+
+  .left h1{
+    font-size: 60px;
+  }
+
+  .left h2{
+    font-size: 35px;
+  }
+
+  .right img{
+    width: 280px;
+  }
+
+  .about h1,
+  .skills h1,
+  .projects h1,
+  .contact h1{
+    font-size: 45px;
+  }
+
+  .about p{
+    width: 100%;
+    font-size: 20px;
+  }
+
+  .contact-form{
+    width: 100%;
+  }
+}
+
+.social-icons{
+  display: flex;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.social-icons a{
+  color: white;
+  font-size: 35px;
+  transition: 0.3s;
+}
+
+.social-icons a:hover{
+  color: cyan;
+  transform: scale(1.2);
+  text-shadow: 0px 0px 15px cyan;
+}
+
+.resume-btn{
+  padding: 12px 25px;
+
+  font-size: 16px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: cyan;
+
+  color: black;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.resume-btn:hover{
+  transform: scale(1.05);
+
+  box-shadow: 0px 0px 15px cyan;
+}
