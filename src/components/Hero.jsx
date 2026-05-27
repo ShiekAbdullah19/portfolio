@@ -1,111 +1,167 @@
 import myPhoto from "../assets/myphoto.jpg";
 import "./Hero.css";
+
 import { motion } from "framer-motion";
+
 import { Typewriter } from "react-simple-typewriter";
+
 import resume from "../assets/resume.pdf";
+
 import {
   FaGithub,
   FaLinkedin,
   FaInstagram,
   FaWhatsapp,
-  FaEnvelope
+  FaEnvelope,
+  FaArrowRight
 } from "react-icons/fa";
 
 function Hero() {
+
   return (
 
-    <motion.div
-      className="container"
-      id="home"
+    <section className="hero-section" id="home">
 
-      initial={{ opacity: 0, y: 100 }}
+      <motion.div
+        className="container"
 
-      animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 80 }}
 
-      transition={{ duration: 1 }}
-    >
+        animate={{ opacity: 1, y: 0 }}
 
-      <div className="left">
+        transition={{ duration: 1 }}
+      >
 
-        <h1>Shiek Abdullah</h1>
+        <div className="left">
 
-        <p><p>
+          <h3 className="hello-text">
+            Hello, I'm
+          </h3>
 
-  <Typewriter
-    words={[
-      "Full Stack Developer",
-      "MERN Stack Developer",
-      "React Developer"
-    ]}
+          <h1>
+            Shiek Abdullah
+          </h1>
 
-    loop={true}
+          <h2 className="typing-text">
 
-    cursor
+            <Typewriter
+              words={[
+                "Full Stack Developer",
+                "MERN Stack Developer",
+                "Frontend Developer",
+                "React Developer"
+              ]}
 
-    cursorStyle="|"
+              loop={true}
 
-    typeSpeed={100}
+              cursor
 
-    deleteSpeed={50}
+              cursorStyle="|"
 
-    delaySpeed={1000}
-  />
+              typeSpeed={90}
 
-</p></p>
+              deleteSpeed={50}
 
-        <a href={resume} download>
+              delaySpeed={1500}
+            />
 
-  <button className="resume-btn">
+          </h2>
 
-    Download Resume
+          <p className="hero-description">
 
-  </button>
+            Passionate Full Stack Developer focused on creating
+            modern, responsive, and user-friendly web applications
+            with clean UI and smooth user experience.
 
-</a>
+          </p>
 
-        <div className="social-icons">
+          <div className="hero-buttons">
 
-  <a href="https://github.com/" target="_blank">
-    <FaGithub />
-  </a>
+            <a href={resume} download>
 
-  <a href="https://linkedin.com/" target="_blank">
-    <FaLinkedin />
-  </a>
+              <button className="resume-btn">
 
-  <a href="https://instagram.com/" target="_blank">
-    <FaInstagram />
-  </a>
+                Download Resume
 
-  <a
-    href="https://wa.me/+91 9342891618"
-    target="_blank"
-  >
-    <FaWhatsapp />
-  </a>
+              </button>
 
-  <a href="mailto:shiekabdullah181@gmail.com">
+            </a>
 
-    <FaEnvelope />
+            <a href="#projects">
 
-  </a>
+              <button className="project-btn">
 
-</div>
+                View Projects <FaArrowRight />
 
-      </div>
+              </button>
 
-      <div className="right">
+            </a>
 
-        <img src={myPhoto} alt="profile" />
+          </div>
 
-      </div>
+          <div className="social-icons">
 
-    </motion.div>
-    
+            <a
+              href="https://github.com/ShiekAbdullah19"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaGithub />
+            </a>
+
+            <a
+              href="https://linkedin.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaLinkedin />
+            </a>
+
+            <a
+              href="https://instagram.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaInstagram />
+            </a>
+
+            <a
+              href="https://wa.me/919342891618"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaWhatsapp />
+            </a>
+
+            <a href="mailto:shiekabdullah181@gmail.com">
+
+              <FaEnvelope />
+
+            </a>
+
+          </div>
+
+        </div>
+
+        <motion.div
+          className="right"
+
+          initial={{ opacity: 0, scale: 0.8 }}
+
+          animate={{ opacity: 1, scale: 1 }}
+
+          transition={{ duration: 1.2 }}
+        >
+
+          <img src={myPhoto} alt="profile" />
+
+        </motion.div>
+
+      </motion.div>
+
+    </section>
 
   );
-
-  
 }
 
 export default Hero;
