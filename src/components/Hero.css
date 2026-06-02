@@ -74,6 +74,8 @@
 .hero-description {
   font-size: 18px;
 
+   padding-bottom: 1px;
+
   color: #d1d5db;
 
   line-height: 1.8;
