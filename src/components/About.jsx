@@ -1,28 +1,58 @@
-import { motion } from "framer-motion";
+import "./About.css";
+
 function About() {
+
   return (
-    <motion.div
-  className="about"
-  id="about"
 
-  initial={{ opacity: 0, y: 100 }}
+    <section className="about" id="about">
 
-  whileInView={{ opacity: 1, y: 0 }}
+      <div className="about-container">
 
-  transition={{ duration: 1 }}
+        <h1>About Me</h1>
 
-  viewport={{ once: true }}
->
+        <p>
+          I'm <span>Shiek Abdullah</span>, a passionate Full Stack Developer
+          and B.Tech Information Technology student at
+          E.G.S Pillay Engineering College.
+        </p>
 
-      <h1>About Me</h1>
+        <p>
+          I specialize in building modern, responsive and scalable web
+          applications using the MERN Stack.
+        </p>
 
-      <p>
-        I am a passionate Full Stack Developer learning MERN Stack
-        and building modern web applications.
-      </p>
+        <p>
+          I have developed real-world projects including
+          E-Commerce platforms, AI-Based Energy Management Systems,
+          and IoT applications.
+        </p>
 
-    </motion.div>
+        <div className="about-details">
+
+          <div className="detail-card">
+            🎓 B.Tech IT (2022 - 2026)
+          </div>
+
+          <div className="detail-card">
+            💻 MERN Stack Developer
+          </div>
+
+          <div className="detail-card">
+            🚀 React | Node.js | MongoDB
+          </div>
+
+          <div className="detail-card">
+            🌍 Passionate About Full Stack Development
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
   );
+
 }
 
 export default About;

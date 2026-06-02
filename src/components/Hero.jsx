@@ -22,10 +22,12 @@ function Hero() {
 
     <section className="hero-section" id="home">
 
+      
+
       <motion.div
         className="container"
 
-        initial={{ opacity: 0, y: 80 }}
+        initial={{ opacity: 0, y: -100 }}
 
         animate={{ opacity: 1, y: 0 }}
 
@@ -33,6 +35,7 @@ function Hero() {
       >
 
         <div className="left">
+                  
 
           <h3 className="hello-text">
             Hello, I'm

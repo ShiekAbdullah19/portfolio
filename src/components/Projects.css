@@ -1,0 +1,173 @@
+.projects {
+  padding: 100px 10%;
+
+  background: linear-gradient(to right, #000000, #0f172a);
+
+  color: white;
+
+  text-align: center;
+}
+
+.projects h1 {
+  font-size: 55px;
+
+  color: cyan;
+
+  margin-bottom: 20px;
+}
+
+.projects-text {
+  font-size: 20px;
+
+  color: #d1d5db;
+
+  max-width: 800px;
+
+  margin: auto;
+
+  line-height: 1.8;
+
+  margin-bottom: 60px;
+}
+
+.projects-container {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 35px;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.08);
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  width: 350px;
+
+  backdrop-filter: blur(10px);
+
+  transition: 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+
+  box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.5);
+}
+
+.project-card img {
+  width: 100%;
+
+  height: auto;
+
+  object-fit: contain;
+
+  transition: 0.3s;
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
+}
+
+.project-card h2 {
+  font-size: 28px;
+
+  margin-top: 20px;
+
+  color: cyan;
+}
+
+.project-card p {
+  font-size: 17px;
+
+  color: #d1d5db;
+
+  line-height: 1.7;
+
+  padding: 15px 20px;
+}
+
+.tech-stack {
+  display: flex;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-bottom: 20px;
+}
+
+.tech-stack span {
+  background: rgba(0, 255, 255, 0.1);
+
+  border: 1px solid cyan;
+
+  padding: 8px 15px;
+
+  border-radius: 30px;
+
+  font-size: 14px;
+
+  color: cyan;
+}
+
+.project-buttons {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 15px;
+
+  padding-bottom: 30px;
+}
+
+.project-buttons button {
+  background: cyan;
+
+  color: black;
+
+  border: none;
+
+  padding: 12px 22px;
+
+  border-radius: 10px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.project-buttons button:hover {
+  background: white;
+
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+
+  .projects h1 {
+    font-size: 40px;
+  }
+
+  .projects-text {
+    font-size: 17px;
+  }
+
+  .project-card {
+    width: 100%;
+  }
+
+}
