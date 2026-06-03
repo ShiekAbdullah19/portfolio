@@ -113,7 +113,7 @@ function Hero() {
             </a>
 
             <a
-              href="https://linkedin.com/"
+              href="https://www.linkedin.com/in/shiekabdullah19?utm_source=share_via&utm_content=profile&utm_medium=member_android"
               target="_blank"
               rel="noreferrer"
             >
@@ -121,7 +121,7 @@ function Hero() {
             </a>
 
             <a
-              href="https://instagram.com/"
+              href="https://www.instagram.com/shiek_abdullah_19?igsh=ZHptam1wenh0M20x"
               target="_blank"
               rel="noreferrer"
             >
@@ -136,11 +136,15 @@ function Hero() {
               <FaWhatsapp />
             </a>
 
-            <a href="mailto:shiekabdullah181@gmail.com">
+           <a
+  href="https://mail.google.com/mail/?view=cm&fs=1&to=shiekabdullah181@gmail.com"
+  target="_blank"
+  rel="noreferrer"
+>
 
-              <FaEnvelope />
+  <FaEnvelope />
 
-            </a>
+</a>
 
           </div>
 
