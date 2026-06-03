@@ -27,9 +27,9 @@ function Contact() {
   try {
 
     await axios.post(
-      "/api/contact",
-      formData
-    );
+  "https://your-backend-url.onrender.com/api/contact",
+  formData
+);
 
     alert("Message Sent Successfully 🔥");
 

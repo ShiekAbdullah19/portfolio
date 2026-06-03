@@ -136,7 +136,7 @@ function Hero() {
               <FaWhatsapp />
             </a>
 
-           <a
+          <a
   href="https://mail.google.com/mail/?view=cm&fs=1&to=shiekabdullah181@gmail.com"
   target="_blank"
   rel="noreferrer"

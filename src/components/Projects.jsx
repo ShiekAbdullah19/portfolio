@@ -17,7 +17,7 @@ function Projects() {
 
       image: ecommerceImg,
 
-      github: "https://github.com/",
+      github: "https://github.com/ShiekAbdullah19/Halleyx-Project.git",
 
       live: "https://google.com",
 
@@ -32,9 +32,9 @@ function Projects() {
 
       image: portfolioImg,
 
-      github: "https://github.com/",
+      github: "https://github.com/ShiekAbdullah19/portfolio.git",
 
-      live: "https://google.com",
+      live: "https://portfolio-lilac-psi-4295372cxd.vercel.app/",
 
       tech: ["React", "CSS", "Vercel"]
     }

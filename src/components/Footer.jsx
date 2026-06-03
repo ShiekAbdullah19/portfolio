@@ -45,13 +45,14 @@ function Footer() {
         </a>
 
         <a
-          href="https://mail.google.com/mail/?view=cm&fs=1&to=shiekabdullah181@gmail.com"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <FaEnvelope />
-        </a>
+  href="https://mail.google.com/mail/?view=cm&fs=1&to=shiekabdullah181@gmail.com"
+  target="_blank"
+  rel="noreferrer"
+>
 
+  <FaEnvelope />
+
+</a>
       </div>
 
       <a href="#home" className="top-btn">
