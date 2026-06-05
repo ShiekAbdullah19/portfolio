@@ -5,6 +5,8 @@ import "./Contact.css";
 
 function Contact() {
 
+  const [loading, setLoading] = useState(false);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -22,43 +24,43 @@ function Contact() {
 
   const handleSubmit = async (e) => {
 
-  e.preventDefault();
+    e.preventDefault();
 
-  try {
+    setLoading(true);
 
-    await axios.post(
-  "https://portfolio-whrj.onrender.com/api/contact",
-  formData
-);
+    try {
 
-    alert("Message Sent Successfully 🔥");
+      await axios.post(
+        "https://portfolio-whrj.onrender.com/api/contact",
+        formData
+      );
 
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-    });
+      alert("Message Sent Successfully 🔥");
 
-  } catch (error) {
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
 
-    alert("Error Sending Message");
+    } catch (error) {
 
-  }
+      alert("Error Sending Message");
 
-};
+    }
+
+    setLoading(false);
+
+  };
 
   return (
 
     <motion.div
       className="contact"
       id="contact"
-
       initial={{ opacity: 0, y: 100 }}
-
       whileInView={{ opacity: 1, y: 0 }}
-
       transition={{ duration: 1 }}
-
       viewport={{ once: true }}
     >
 
@@ -75,6 +77,7 @@ function Contact() {
           placeholder="Enter your name"
           value={formData.name}
           onChange={handleChange}
+          required
         />
 
         <input
@@ -83,6 +86,7 @@ function Contact() {
           placeholder="Enter your email"
           value={formData.email}
           onChange={handleChange}
+          required
         />
 
         <textarea
@@ -90,12 +94,14 @@ function Contact() {
           placeholder="Enter your message"
           value={formData.message}
           onChange={handleChange}
+          required
         ></textarea>
 
-        <button type="submit">
-
-          Send Message
-
+        <button
+          type="submit"
+          disabled={loading}
+        >
+          {loading ? "Sending..." : "Send Message"}
         </button>
 
       </form>

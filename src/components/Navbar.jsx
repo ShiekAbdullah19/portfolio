@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import "./Navbar.css";
 
 function Navbar() {
 
@@ -7,8 +8,6 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-
-      
 
       <div
         className="menu-icon"
@@ -20,23 +19,33 @@ function Navbar() {
       <ul className={menuOpen ? "nav-links active" : "nav-links"}>
 
         <li>
-          <a href="#home">Home</a>
+          <a href="#home" onClick={() => setMenuOpen(false)}>
+            Home
+          </a>
         </li>
 
         <li>
-          <a href="#about">About</a>
+          <a href="#about" onClick={() => setMenuOpen(false)}>
+            About
+          </a>
         </li>
 
         <li>
-          <a href="#skills">Skills</a>
+          <a href="#skills" onClick={() => setMenuOpen(false)}>
+            Skills
+          </a>
         </li>
 
         <li>
-          <a href="#projects">Projects</a>
+          <a href="#projects" onClick={() => setMenuOpen(false)}>
+            Projects
+          </a>
         </li>
 
         <li>
-          <a href="#contact">Contact</a>
+          <a href="#contact" onClick={() => setMenuOpen(false)}>
+            Contact
+          </a>
         </li>
 
       </ul>

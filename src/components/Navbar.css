@@ -1,41 +1,32 @@
 .navbar {
   position: fixed;
-
   top: 0;
-
   left: 0;
 
   width: 100%;
-
   height: 80px;
 
   display: flex;
-
   justify-content: center;
-
   align-items: center;
 
-  background: rgba(0, 0, 0, 0.5);
-
-  backdrop-filter: blur(10px);
+  background: transparent;
+  backdrop-filter: none;
 
   z-index: 1000;
 }
-
 .nav-links {
   display: flex;
-
   justify-content: center;
-
   align-items: center;
 
   gap: 40px;
 
   list-style: none;
-
   margin: 0;
-
   padding: 0;
+
+  width: 100%;
 }
 
 .nav-links li {
@@ -44,11 +35,9 @@
 
 .nav-links a {
   color: white;
-
   text-decoration: none;
 
   font-size: 18px;
-
   font-weight: 500;
 
   transition: 0.3s;
@@ -62,36 +51,45 @@
   display: none;
 }
 
+/* Mobile */
+
 @media (max-width: 768px) {
 
   .navbar {
     justify-content: flex-end;
-
     padding-right: 30px;
   }
 
-  .menu-icon {
-    display: block;
+ .menu-icon {
+  display: block;
+  font-size: 28px;
+  color: white;
 
-    font-size: 26px;
+  background: rgba(255,255,255,0.08);
 
-    color: white;
+  padding: 10px;
+  border-radius: 10px;
 
-    cursor: pointer;
-  }
+  backdrop-filter: blur(10px);
 
+  cursor: pointer;
+}
+
+.menu-icon:hover {
+  color: cyan;
+}
   .nav-links {
     position: absolute;
-
     top: 80px;
-
     right: -100%;
 
+    width: 220px;
+
+    display: flex;
     flex-direction: column;
+    align-items: center;
 
     background: #0f172a;
-
-    width: 220px;
 
     padding: 30px;
 
@@ -101,5 +99,4 @@
   .nav-links.active {
     right: 0;
   }
-
 }
