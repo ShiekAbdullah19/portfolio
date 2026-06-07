@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
+import Certificate from "./components/Certificate"
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
@@ -20,6 +21,8 @@ function App() {
       <Skills />
 
       <Projects />
+    
+      <Certificate />
 
       <Contact />
 

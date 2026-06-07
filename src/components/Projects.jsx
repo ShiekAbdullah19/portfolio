@@ -17,11 +17,11 @@ function Projects() {
 
       image: ecommerceImg,
 
-      github: "https://github.com/ShiekAbdullah19/Halleyx-Project.git",
+      github: "https://github.com/ShiekAbdullah19/E---Commerce",
 
-      live: "https://google.com",
+      live: "https://e-commerce-eight-pearl-83.vercel.app/",
 
-      tech: ["React", "Node.js", "MongoDB"]
+      tech: ["React", "Node.js", "MongoDB" , "Express.js",]
     },
 
     {
@@ -36,7 +36,7 @@ function Projects() {
 
       live: "https://portfolio-lilac-psi-4295372cxd.vercel.app/",
 
-      tech: ["React", "CSS", "Vercel"]
+      tech: ["React", "CSS", "Vercel" , "MongoDB"]
     }
   ];
 

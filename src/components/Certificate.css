@@ -1,0 +1,181 @@
+.certificates-section {
+  padding: 80px 4%;
+  /* Pure linear-gradient choice matching your portfolio theme */
+  background: linear-gradient(to right, #000000, #0f172a);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: #00f3ff; /* Neon cyan color accent from your UI */
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.section-subtitle {
+  color: #a0aec0;
+  margin-bottom: 40px;
+}
+
+/* 3D Framework Base Wrapper */
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Individual Certificate Card Framework */
+.carousel-card {
+  position: absolute;
+  width: 340px;
+  background: rgba(17, 24, 39, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 243, 255, 0.1);
+  padding: 16px;
+  border-radius: 16px;
+  opacity: 0;
+  pointer-events: none;
+  /* Smooth 3D animation timing for the live movement */
+  transition: all 0.6s cubic-bezier(0.1, 0, 0.1, 1); 
+}
+
+/* Center Active Card: High glow and 3D Zoom scaling */
+.carousel-card.activeSlide {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0) scale(1.1);
+  z-index: 5;
+  border-color: #00f3ff;
+  box-shadow: 0 15px 35px rgba(0, 243, 255, 0.25);
+}
+
+/* Left Stacked Card Position */
+.carousel-card.lastSlide {
+  opacity: 0.4;
+  pointer-events: auto;
+  transform: translateX(-110%) scale(0.85) rotateY(15deg);
+  z-index: 3;
+}
+
+/* Right Stacked Card Position */
+.carousel-card.nextSlide {
+  opacity: 0.4;
+  pointer-events: auto;
+  transform: translateX(110%) scale(0.85) rotateY(-15deg);
+  z-index: 3;
+}
+
+/* Premium image container wrapper with matching backdrop gradient */
+.carousel-img-wrapper {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: linear-gradient(to right, #000000, #0f172a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.carousel-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Certificates cut aagama full visibility kedaikura unique mode */
+}
+
+.carousel-info h3 {
+  color: #ffffff;
+  margin-top: 15px;
+  font-size: 1.1rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Navigation Arrow Controls */
+.nav-btn {
+  position: absolute;
+  background: rgba(0, 243, 255, 0.1);
+  border: 1px solid rgba(0, 243, 255, 0.3);
+  color: #00f3ff;
+  font-size: 1.5rem;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+  background: #00f3ff;
+  color: #000;
+  box-shadow: 0 0 15px #00f3ff;
+}
+
+.prev-btn { left: 10px; }
+.next-btn { right: 10px; }
+
+/* Dynamic Indicator Dots */
+.carousel-dots {
+  display: flex;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active-dot {
+  background: #00f3ff;
+  width: 24px;
+  border-radius: 4px;
+  box-shadow: 0 0 8px #00f3ff;
+}
+
+/* Mobile Devices Optimization Layer */
+@media (max-width: 768px) {
+  .carousel-wrapper {
+    height: 360px;
+  }
+  .carousel-card {
+    width: 260px;
+  }
+  .carousel-card.lastSlide {
+    transform: translateX(-65%) scale(0.75);
+  }
+  .carousel-card.nextSlide {
+    transform: translateX(65%) scale(0.75);
+  }
+  .nav-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 1.1rem;
+  }
+}
