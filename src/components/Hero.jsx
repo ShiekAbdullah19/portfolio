@@ -22,7 +22,7 @@ function Hero() {
 
     <section className="hero-section" id="home">
 
-      
+
 
       <motion.div
         className="container"
@@ -35,7 +35,7 @@ function Hero() {
       >
 
         <div className="left">
-                  
+
 
           <h3 className="hello-text">
             Hello, I'm
@@ -84,7 +84,7 @@ function Hero() {
 
               <button className="resume-btn">
 
-                Download Resume
+                Check Resume
 
               </button>
 
@@ -136,15 +136,15 @@ function Hero() {
               <FaWhatsapp />
             </a>
 
-          <a
-  href="https://mail.google.com/mail/?view=cm&fs=1&to=shiekabdullah181@gmail.com"
-  target="_blank"
-  rel="noreferrer"
->
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=shiekabdullah181@gmail.com"
+              target="_blank"
+              rel="noreferrer"
+            >
 
-  <FaEnvelope />
+              <FaEnvelope />
 
-</a>
+            </a>
 
           </div>
 

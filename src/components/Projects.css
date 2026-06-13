@@ -1,162 +1,186 @@
 .projects {
-  padding: 100px 10%;
-
+  padding: 120px 6%;
   background: linear-gradient(to right, #000000, #0f172a);
-
   color: white;
-
   text-align: center;
+  overflow: hidden;
 }
 
 .projects h1 {
   font-size: 55px;
+  color: white;
+  font-weight: 800;
+  margin: 0 0 20px 0;
+}
 
+.projects h1 span {
   color: cyan;
-
-  margin-bottom: 20px;
+  text-shadow: 0 0 25px rgba(0, 243, 255, 0.25);
 }
 
 .projects-text {
-  font-size: 20px;
-
-  color: #d1d5db;
-
-  max-width: 800px;
-
-  margin: auto;
-
+  font-size: 19px;
+  color: #94a3b8;
+  max-width: 750px;
+  margin: 0 auto 60px auto;
   line-height: 1.8;
-
-  margin-bottom: 60px;
 }
 
+/* Flex Grid Engine optimized for 2 elements center alignment */
 .projects-container {
   display: flex;
-
   justify-content: center;
-
-  align-items: center;
-
+  align-items: stretch;
   flex-wrap: wrap;
-
   gap: 35px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .project-card {
-  background: rgba(255, 255, 255, 0.08);
-
-  border: 1px solid rgba(255, 255, 255, 0.1);
-
-  border-radius: 20px;
-
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 24px;
   overflow: hidden;
-
-  width: 350px;
-
-  backdrop-filter: blur(10px);
-
-  transition: 0.3s;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 380px; /* Perfect card spacing matrix */
 }
 
 .project-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-8px);
+  border-color: rgba(0, 243, 255, 0.3);
+  box-shadow: 0 15px 40px rgba(0, 243, 255, 0.1);
+}
 
-  box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.5);
+/* Image Contain Engine Setup - fixed your screenshot layout issue bro */
+.project-image-wrapper {
+  width: 100%;
+  height: 220px;
+  background: rgba(15, 23, 42, 0.6); /* Sleek inner dark contrast background */
+  padding: 15px; /* Gives nice breathing room around your dashboard images */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .project-card img {
-  width: 100%;
-
-  height: auto;
-
-  object-fit: contain;
-
-  transition: 0.3s;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Image content will never crop or cut now bro! */
+  border-radius: 10px; /* Soft edges inside the frame */
+  transition: transform 0.4s ease;
 }
 
 .project-card:hover img {
-  transform: scale(1.05);
+  transform: scale(1.04); /* Subtle smooth upscale inside containment */
+}
+
+.project-content {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .project-card h2 {
-  font-size: 28px;
+  font-size: 24px;
+  color: #ffffff;
+  margin: 0 0 12px 0;
+  font-weight: 700;
+}
 
-  margin-top: 20px;
-
+.project-card:hover h2 {
   color: cyan;
 }
 
 .project-card p {
-  font-size: 17px;
-
-  color: #d1d5db;
-
-  line-height: 1.7;
-
-  padding: 15px 20px;
+  font-size: 15px;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+  flex-grow: 1;
 }
 
 .tech-stack {
   display: flex;
-
-  justify-content: center;
-
+  justify-content: flex-start;
   flex-wrap: wrap;
-
-  gap: 10px;
-
-  margin-bottom: 20px;
+  gap: 8px;
+  margin-bottom: 25px;
 }
 
 .tech-stack span {
-  background: rgba(0, 255, 255, 0.1);
-
-  border: 1px solid cyan;
-
-  padding: 8px 15px;
-
+  background: rgba(0, 243, 255, 0.05);
+  border: 1px solid rgba(0, 243, 255, 0.15);
+  padding: 6px 14px;
   border-radius: 30px;
-
-  font-size: 14px;
-
+  font-size: 13px;
+  font-weight: 500;
   color: cyan;
 }
 
 .project-buttons {
   display: flex;
+  gap: 12px;
+}
 
+.project-buttons a {
+  text-decoration: none;
+  flex: 1;
+}
+
+.btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
   justify-content: center;
-
-  gap: 15px;
-
-  padding-bottom: 30px;
-}
-
-.project-buttons button {
-  background: cyan;
-
-  color: black;
-
-  border: none;
-
-  padding: 12px 22px;
-
-  border-radius: 10px;
-
-  font-weight: bold;
-
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
   cursor: pointer;
-
-  transition: 0.3s;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
 }
 
-.project-buttons button:hover {
-  background: white;
+.btn-github {
+  background: transparent;
+  color: #cbd5e1;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
 
-  transform: scale(1.05);
+.btn-github:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.btn-live {
+  background: cyan;
+  color: #000000;
+  border: 1px solid cyan;
+  box-shadow: 0 4px 12px rgba(0, 243, 255, 0.2);
+}
+
+.btn-live:hover {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #000000;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
 }
 
 @media (max-width: 768px) {
+  .projects {
+    padding: 80px 6%;
+  }
 
   .projects h1 {
     font-size: 40px;
@@ -165,9 +189,8 @@
   .projects-text {
     font-size: 17px;
   }
-
+  
   .project-card {
     width: 100%;
   }
-
 }

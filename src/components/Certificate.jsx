@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Certificate.css';
 import { motion } from "framer-motion";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa"; // Added slick arrows for navigation
 
 const Certificate = () => {
   const getImageUrl = (name) => {
@@ -24,75 +25,98 @@ const Certificate = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
 
-  // Speed Increased: 1.5 Seconds loop setup
+  // Auto loop auto-play controller
   useEffect(() => {
     if (isHovered) return;
 
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % certificates.length);
+      handleNext();
     }, 1500); 
 
     return () => clearInterval(interval);
   }, [currentIndex, isHovered]);
 
+  // Click handler actions
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + certificates.length) % certificates.length);
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % certificates.length);
+  };
+
   return (
-            
-      <motion.section
-      className="Certificates"
-      id="Certificates"
-
-      initial={{ opacity: 0, y: 100 }}
-
+    <motion.section
+      className="Certificates-wrapper-section"
+      id="certificates" /* Exact match with Navbar's handleScroll setup bro */
+      initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
-
-      transition={{ duration: 1 }}
-
-      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true, amount: 0.15 }}
     >
-      
-      
-      <section className="certificates-section" id="certificates">
-      <h2 className="section-title">My Certificates</h2>
-      <p className="section-subtitle">Continuous learning and professional recognitions</p>
+      {/* Removed the duplicate/conflicting id from this inner tag */}
+      <section className="certificates-section">
+        {/* Updated header tags to align with portfolio theme setup */}
+        <h2 className="section-title">My <span>Certificates</span></h2>
+        <p className="section-subtitle">Continuous learning and professional recognitions</p>
 
-      <div 
-        className="carousel-wrapper"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        <div className="slider-container">
-          {certificates.map((cert, index) => {
-            let position = 'hiddenSlide'; 
-            
-            if (index === currentIndex) {
-              position = 'activeSlide';
-            } else if (
-              index === currentIndex - 1 ||
-              (currentIndex === 0 && index === certificates.length - 1)
-            ) {
-              position = 'lastSlide';
-            } else if (
-              index === currentIndex + 1 ||
-              (currentIndex === certificates.length - 1 && index === 0)
-            ) {
-              position = 'nextSlide';
-            }
+        <div 
+          className="carousel-wrapper"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          {/* Navigation Control Buttons */}
+          <button className="nav-btn prev-btn" onClick={handlePrev} aria-label="Previous Slide">
+            <FaChevronLeft />
+          </button>
 
-            return (
-              <div className={`carousel-card ${position}`} key={cert.id}>
-                <div className="carousel-img-wrapper">
-                  <img src={cert.image} alt={cert.title} />
+          <div className="slider-container">
+            {certificates.map((cert, index) => {
+              let position = 'hiddenSlide'; 
+              
+              if (index === currentIndex) {
+                position = 'activeSlide';
+              } else if (
+                index === currentIndex - 1 ||
+                (currentIndex === 0 && index === certificates.length - 1)
+              ) {
+                position = 'lastSlide';
+              } else if (
+                index === currentIndex + 1 ||
+                (currentIndex === certificates.length - 1 && index === 0)
+              ) {
+                position = 'nextSlide';
+              }
+
+              return (
+                <div className={`carousel-card ${position}`} key={cert.id}>
+                  <div className="carousel-img-wrapper">
+                    <img src={cert.image} alt={cert.title} />
+                  </div>
+                  <div className="carousel-info">
+                    <h3>{cert.title}</h3>
+                  </div>
                 </div>
-                <div className="carousel-info">
-                  <h3>{cert.title}</h3>
-                </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
+
+          <button className="nav-btn next-btn" onClick={handleNext} aria-label="Next Slide">
+            <FaChevronRight />
+          </button>
         </div>
-      </div>
-    </section>
 
+        {/* Dynamic Indicator Dots Layer */}
+        <div className="carousel-dots">
+          {certificates.map((_, index) => (
+            <div
+              key={index}
+              className={`dot ${index === currentIndex ? 'active-dot' : ''}`}
+              onClick={() => setCurrentIndex(index)}
+            ></div>
+          ))}
+        </div>
+      </section>
     </motion.section>
   );
 };

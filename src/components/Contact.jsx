@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
+import { FaEnvelope, FaPhone, FaLocationDot } from "react-icons/fa6";
 import "./Contact.css";
 
 function Contact() {
@@ -10,22 +11,20 @@ function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    subject: "",
     message: "",
   });
 
   const handleChange = (e) => {
-
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
-
   };
 
   const handleSubmit = async (e) => {
 
     e.preventDefault();
-
     setLoading(true);
 
     try {
@@ -40,6 +39,7 @@ function Contact() {
       setFormData({
         name: "",
         email: "",
+        subject: "",
         message: "",
       });
 
@@ -50,12 +50,10 @@ function Contact() {
     }
 
     setLoading(false);
-
   };
 
   return (
-
-    <motion.div
+    <motion.section
       className="contact"
       id="contact"
       initial={{ opacity: 0, y: 100 }}
@@ -64,49 +62,105 @@ function Contact() {
       viewport={{ once: true }}
     >
 
-      <h1>Contact Me</h1>
 
-      <form
-        className="contact-form"
-        onSubmit={handleSubmit}
-      >
+      <h1 className="contact-title">
+        Contact <span>Me</span>
+      </h1>
 
-        <input
-          type="text"
-          name="name"
-          placeholder="Enter your name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
+      <p className="contact-subtitle">
+        Let's connect and build something amazing together
+      </p>
 
-        <input
-          type="email"
-          name="email"
-          placeholder="Enter your email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
+      <div className="contact-container">
 
-        <textarea
-          name="message"
-          placeholder="Enter your message"
-          value={formData.message}
-          onChange={handleChange}
-          required
-        ></textarea>
+        <div className="contact-info">
 
-        <button
-          type="submit"
-          disabled={loading}
+          <a
+            a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=shiekabdullah181@gmail.com"
+            target="_blank"
+            rel="noreferrer"
+            className="info-card"
+          >
+            <FaEnvelope />
+            <h3>Email</h3>
+            <p>shiekabdullah181@gmail.com</p>
+          </a>
+
+          <a
+            href="tel:+919342891618"
+            className="info-card"
+          >
+            <FaPhone />
+            <h3>Phone</h3>
+            <p>+91 9342891618</p>
+          </a>
+
+          <a
+            href="https://maps.google.com/?q=Chennai,Tamil Nadu,India"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="info-card"
+          >
+            <FaLocationDot />
+            <h3>Location</h3>
+            <p>Chennai, Tamil Nadu, India</p>
+          </a>
+
+        </div>
+
+        <form
+          className="contact-form"
+          onSubmit={handleSubmit}
         >
-          {loading ? "Sending..." : "Send Message"}
-        </button>
 
-      </form>
+          <input
+            type="text"
+            name="name"
+            placeholder="Enter your name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
 
-    </motion.div>
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+
+          <input
+            type="subject"
+            name="subject"
+            placeholder="Subject"
+            value={formData.subject}
+            onChange={handleChange}
+            required
+          />
+
+          <textarea
+            name="message"
+            placeholder="Enter your message"
+            value={formData.message}
+            onChange={handleChange}
+            required
+          />
+
+          <button
+            type="submit"
+            disabled={loading}
+          >
+            {loading ? "Sending..." : "Send Message"}
+          </button>
+
+        </form>
+
+      </div>
+
+    </motion.section>
   );
 }
 

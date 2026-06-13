@@ -1,91 +1,171 @@
 .about {
-  padding: 100px 10%;
-
+  padding: 120px 8%;
   background: linear-gradient(to right, #000000, #0f172a);
-  
   color: white;
-
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-top: -50px;
 }
 
-.about-container h1 {
+/* Flexbox Splitter to support 2-Column layout for big screens */
+.about-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+/* Left side alignment settings */
+.about-left {
+  flex: 1.1;
+  text-align: left; /* Modern standard left alignment text matching template */
+}
+
+.about-left h1 {
   font-size: 55px;
-
-  margin-bottom: 30px;
-
-  color: cyan;
+  margin: 0 0 30px 0;
+  color: white;
+  font-weight: 800;
 }
 
-.about-container p {
-  font-size: 20px;
+.about-left h1 span {
+  color: cyan;
+  text-shadow: 0 0 25px rgba(0, 243, 255, 0.25);
+}
 
+.about-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-left p {
+  font-size: 19px;
   line-height: 1.8;
-
-  margin-bottom: 20px;
-
+  margin: 0;
   color: #d1d5db;
-
-  max-width: 800px;
-
-  margin-left: auto;
-
-  margin-right: auto;
+  max-width: 580px;
 }
 
-.about-container span {
+.about-left p span {
   color: cyan;
+  font-weight: 600;
+}
 
-  font-weight: bold;
+/* Right side grid engine setup */
+.about-right {
+  flex: 0.9;
+  width: 100%;
 }
 
 .about-details {
-  display: flex;
-
-  justify-content: center;
-
-  align-items: center;
-
-  flex-wrap: wrap;
-
-  gap: 25px;
-
-  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2x2 Matrix grid */
+  gap: 20px;
+  margin-top: 0; /* Reset previous fluid top padding */
 }
 
 .detail-card {
-  background: rgba(255, 255, 255, 0.08);
-
-  border: 1px solid rgba(255, 255, 255, 0.1);
-
-  padding: 30px;
-
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 35px 20px;
   border-radius: 20px;
-
   backdrop-filter: blur(10px);
-
-  transition: 0.3s;
-
-  font-size: 18px;
-
-  font-weight: 500;
-
-  width: 260px;
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%; /* Autofit inside grid template spacing matrix */
+  box-sizing: border-box;
 }
 
+/* Hover Engine: Interactive transformation layers */
 .detail-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-8px);
+  background: rgba(15, 23, 42, 0.7);
+  border-color: rgba(0, 243, 255, 0.3);
+  box-shadow: 0px 10px 30px rgba(0, 243, 255, 0.15);
+}
 
-  box-shadow: 0px 0px 20px cyan;
+.card-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.card-emoji {
+  font-size: 32px;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+/* Emoji animation trigger inside mapping context */
+.detail-card:hover .card-emoji {
+  transform: scale(1.25) rotate(8deg);
+}
+
+.card-text {
+  font-size: 16px;
+  font-weight: 500;
+  color: #e2e8f0;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.detail-card:hover .card-text {
+  color: cyan;
+}
+
+/* Responsive Fluid Breakdowns */
+@media (max-width: 992px) {
+  .about-container {
+    flex-direction: column; /* Stack vertically on tablet/mid sizing devices */
+    gap: 45px;
+  }
+  
+  .about-left {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-left p {
+    max-width: 700px;
+  }
+
+  .about-right {
+    max-width: 560px;
+  }
 }
 
 @media (max-width: 768px) {
-
-  .about-container h1 {
-    font-size: 40px;
+  .about {
+    padding: 80px 6%;
   }
 
-  .about-container p {
+  .about-left h1 {
+    font-size: 42px;
+  }
+
+  .about-left p {
     font-size: 17px;
   }
+}
 
+@media (max-width: 480px) {
+  .about-details {
+    grid-template-columns: 1fr; /* 1x1 Single column row stacking layout inside tiny screens */
+    gap: 15px;
+  }
+  
+  .detail-card {
+    padding: 25px 15px;
+  }
 }

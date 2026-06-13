@@ -1,117 +1,160 @@
-.footer {
-  padding: 60px 10%;
-
+.footer-container {
   background: linear-gradient(to right, #000000, #0f172a);
-
-  color: white;
-
-  text-align: center;
+  padding: 80px 6% 0 6%;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(0, 243, 255, 0.1);
 }
 
-.footer h1 {
-  font-size: 40px;
-
-  color: cyan;
-
-  margin-bottom: 10px;
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 50px;
+  padding-bottom: 50px;
 }
 
-.footer p {
-  color: #d1d5db;
+.footer-brand {
+  flex: 1;
+  min-width: 280px;
+}
 
-  font-size: 18px;
+.footer-logo {
+  font-size: 2.2rem;
+  color: #00f3ff;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+}
 
-  margin-bottom: 30px;
+.footer-tagline {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 360px;
+  margin: 0 0 25px 0;
 }
 
 .footer-icons {
   display: flex;
-
-  justify-content: center;
-
-  gap: 25px;
-
+  gap: 15px;
   margin-bottom: 30px;
 }
 
 .footer-icons a {
-  width: 50px;
-
-  height: 50px;
-
-  display: flex;
-
-  justify-content: center;
-
-  align-items: center;
-
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-
-  background: rgba(255,255,255,0.08);
-
-  color: white;
-
-  font-size: 22px;
-
-  transition: 0.3s;
-
-  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-icons a:hover {
-  color: cyan;
-
-  box-shadow: 0px 0px 15px rgba(0,255,255,0.5);
-
-  transform: translateY(-5px);
+  color: #000000;
+  background: #00f3ff;
+  border-color: #00f3ff;
+  box-shadow: 0 0 15px rgba(0, 243, 255, 0.6);
+  transform: translateY(-4px);
 }
 
-.top-btn {
-  width: 50px;
-
-  height: 50px;
-
-  margin: auto;
-
-  display: flex;
-
-  justify-content: center;
-
-  align-items: center;
-
-  border-radius: 50%;
-
-  background: cyan;
-
-  color: black;
-
-  font-size: 20px;
-
-  margin-bottom: 30px;
-
+.back-to-top-btn {
   text-decoration: none;
-
-  transition: 0.3s;
+  background: transparent;
+  border: 1px solid rgba(0, 243, 255, 0.4);
+  color: #00f3ff;
+  padding: 12px 24px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
 }
 
-.top-btn:hover {
-  background: white;
-
-  transform: scale(1.1);
+.back-to-top-btn:hover {
+  background: rgba(0, 243, 255, 0.1);
+  box-shadow: 0 0 20px rgba(0, 243, 255, 0.25);
+  transform: translateY(-2px);
 }
 
-.footer h3 {
-  font-size: 15px;
+.footer-links-group {
+  display: flex;
+  gap: 100px;
+  flex-wrap: wrap;
+}
 
+.footer-column {
+  min-width: 140px;
+}
+
+/* FIX: Site Map and Legal titles-ku keela nalla gap kuduthachu bro (margin-bottom: 25px) */
+.footer-column h3 {
+  color: #ffffff;
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0 0 25px 0; 
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* FIX: Links item elements naduvula spacing increased for better readability */
+.footer-column ul li {
+  margin-bottom: 18px; 
+}
+
+.footer-column ul li a {
   color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
 
-  font-weight: normal;
+.footer-column ul li a:hover {
+  color: #00f3ff;
+  padding-left: 6px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 25px 0;
+  text-align: center;
+  background: linear-gradient(to right, #000000, #0f172a);
+  margin: 0 -6%;
+}
+
+.footer-bottom h3 {
+  color: #64748b;
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin: 0;
 }
 
 @media (max-width: 768px) {
-
-  .footer h1 {
-    font-size: 30px;
+  .footer-content {
+    flex-direction: column;
+    gap: 40px;
   }
-
+  
+  .footer-links-group {
+    gap: 50px;
+    justify-content: space-between;
+  }
+  
+  .footer-logo {
+    font-size: 1.8rem;
+  }
 }
