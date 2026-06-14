@@ -1,5 +1,6 @@
 import { useState } from "react";
-import axios from "axios";
+// Change: Removed axios and added emailjs browser package bro
+import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 import { FaEnvelope, FaPhone, FaLocationDot } from "react-icons/fa6";
 import "./Contact.css";
@@ -20,37 +21,41 @@ function Contact() {
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
 
-    try {
-      // Fix: Render சர்வர் தூங்கிட்டு இருந்தாலும் 60 செகண்ட் வரை வெயிட் பண்ண டைம்அவுட் வைக்கிறோம் bro
-      await axios.post(
-        "https://portfolio-whrj.onrender.com/api/contact",
-        formData,
-        { timeout: 60000 } 
-      );
+    // 🛠️ IMPORTANT: Replace placeholder strings with your original keys bro!
+    const serviceId = "portfolio_gmail";          // Already set to your default!
+    const templateId = "template_5gw8vqg"; // Replace with your template_xxxx from Email Templates tab
+    const publicKey = "lnk9-jWV9D-KBTwRV";   // Replace with your public key from Account tab
 
-      alert("Message Sent Successfully 🔥");
+    // Structuring the variables exactly to map with your EmailJS template tags
+    const templateParams = {
+      name: formData.name,
+      email: formData.email,
+      subject: formData.subject,
+      message: formData.message,
+    };
 
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
+    emailjs
+      .send(serviceId, templateId, templateParams, publicKey)
+      .then((response) => {
+        alert("Message Sent Successfully🔥");
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+      })
+      .catch((error) => {
+        console.error("EmailJS Error Details:", error);
+        alert("Something went wrong. Please check your credentials configuration!");
+      })
+      .finally(() => {
+        setLoading(false);
       });
-    } catch (error) {
-      console.error("Error Details:", error);
-      // ஒருவேளை நெட்வொர்க் எரர் வந்தா தெளிவா காட்ட
-      if (error.code === 'ECONNABORTED') {
-        alert("Server is waking up! Please try clicking 'Send Message' again in a few seconds. ⏳");
-      } else {
-        alert("Error Sending Message. Check if backend is active!");
-      }
-    }
-
-    setLoading(false);
   };
 
   return (
@@ -120,9 +125,8 @@ function Contact() {
             required
           />
 
-          {/* Fix: type="subject" மாற்றப்பட்டு type="text" ஆக்கப்பட்டுள்ளது bro */}
           <input
-            type="text" 
+            type="text"
             name="subject"
             placeholder="Subject"
             value={formData.subject}
