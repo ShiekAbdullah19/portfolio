@@ -315,83 +315,125 @@ body {
   box-shadow: 0px 0px 15px cyan;
 }
 
-/* ================= MOBILE RESPONSIVE LAYER (LAG KILLER RULES) ================= */
+/* ================= MOBILE RESPONSIVE LAYER (X-AXIS OVERFLOW FIX) =============== */
+/* ================= MOBILE RESPONSIVE LAYER (COLOR & OVERFLOW FIX) ================= */
+/* ================= MOBILE RESPONSIVE LAYER (COLOR & OVERFLOW FIX) ================= */
 @media(max-width:768px) {
-  /* Lag Killer Fix: மொபைல்ல ஹெவியான க்ளோ ஷேடோக்களை நீக்கி GPU-வை ஃப்ரீ பண்றோம் bro */
+  html, body {
+    overflow-x: hidden !important;
+    position: relative;
+    width: 100%;
+    background: linear-gradient(to right, #000000, #0f172a) !important;
+  }
+
   * {
     box-shadow: none !important;
     text-shadow: none !important;
-    will-change: transform;
   }
 
   body {
-    /* கிராடியன்ட்க்கு பதிலா சாலிட் டார்க் கலர் குடுத்தா மொபைல் ஸ்க்ரோலிங் வெண்ணெய் மாதிரி இருக்கும் bro */
-    background: #020617 !important;
+    -webkit-overflow-scrolling: touch;
   }
 
+  /* Fix: மொபைல்ல நேவ்பாருக்கு கிளாஸ் எஃபெக்ட் / டிரான்ஸ்பரண்ட் கிடையாது! Solid Dark Color bro */
   .navbar {
-    padding: 20px;
-    background: #0f172a; /* Transparent மாத்தி சாலிட் ஆக்கியாச்சு */
+    background: linear-gradient(to right, #000000, #0f172a) !important; 
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    padding: 15px 20px !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100% !important;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.1); /* லைட்டா ஒரு பார்டர் பிரிச்சு காட்ட */
+  }
+
+  /* மத்த எல்லா மெயின் செக்ஷன்களும் டிரான்ஸ்பரண்டா இருக்கும், சோ பாடி கிராடியன்ட் அழகா தெரியும் */
+  .container, 
+  .about, 
+  .skills, 
+  .projects, 
+  .certificates-section, 
+  .certificates,
+  .contact,
+  footer,
+  .footer-container {
+    background: transparent !important;
+    width: 100% !important;
+    box-sizing: border-box;
   }
 
   .menu-icon {
     display: block;
   }
 
+  /* மொபைல் நேவ்பார் ஓபன் ஆகுற பாக்ஸ் */
   .nav-links {
     position: absolute;
-    top: 80px;
-    right: -100%;
+    top: 60px; /* நேவ்பார் ஹைட்டுக்கு ஏத்த மாதிரி அட்ஜஸ்ட் பண்ணியாச்சு */
+    right: 20px;
     flex-direction: column;
-    background: #111827;
-    width: 220px;
+    background: #111827 !important;
+    width: 200px;
     padding: 20px;
     border-radius: 10px;
-    transition: 0.3s ease-in-out;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;
   }
 
   .nav-links.active {
-    right: 20px;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
   }
 
   .container {
+    max-width: 100vw !important;
     flex-direction: column-reverse;
     text-align: center;
-    gap: 40px;
-    padding: 100px 20px 40px 20px;
+    gap: 30px;
+    padding: 110px 20px 40px 20px !important; /* டாப் பேடிங் கொஞ்சம் கூட்டியாச்சு */
   }
 
   .left h1 {
-    font-size: 42px; /* மொபைலுக்கு ஏத்த சரியான ஆப்டிமைஸ்டு சைஸ் */
+    font-size: 38px;
     margin-bottom: 15px;
   }
 
   .left h2 {
-    font-size: 28px;
+    font-size: 26px;
     margin-bottom: 25px;
   }
 
   .left button {
     padding: 12px 30px;
     font-size: 18px;
-    width: 100%; /* மொபைல்ல கிளிக் பண்ண ஈஸியா இருக்கும் */
+    width: 100%;
   }
 
   .right img {
     width: 240px;
-    border: 3px solid cyan; /* ஷேடோவுக்கு பதிலா பிரீமியம் பார்டர் */
+    max-width: 80vw;
+    border: 3px solid cyan;
   }
 
-  .about {
-    padding: 60px 20px;
+  .about, .skills, .projects, .contact, .certificates-section, .certificates {
+    padding: 60px 20px !important;
   }
 
   .about h1,
   .skills h1,
   .projects h1,
   .contact h1 {
-    font-size: 36px;
-    margin-bottom: 30px;
+    font-size: 34px;
+    margin-bottom: 25px;
   }
 
   .about p {
@@ -400,34 +442,28 @@ body {
     line-height: 1.6;
   }
 
-  .skills {
-    padding: 60px 20px;
+  .skills-container {
+    width: 100%;
+    gap: 15px;
   }
 
   .skill-card {
-    padding: 20px 35px;
-    font-size: 18px;
-  }
-
-  .projects {
-    padding: 60px 20px;
+    padding: 15px 25px;
+    font-size: 16px;
+    background: #111827 !important;
   }
 
   .project-card {
     width: 100%;
-    max-width: 340px;
+    max-width: 100%;
     padding: 20px;
+    background: #111827 !important;
   }
 
-  /* மொபைல்ல கார்டுகளுக்கு மட்டும் லைட் க்ளோ எஃபெக்ட் பார்டர் */
   .skill-card:hover,
   .project-card:hover {
     border: 1px solid cyan;
-    transform: none !important; /* லேக் ஆகாம இருக்க மொபைல் ஹோவர் அனிமேஷனை ஆஃப் பண்ணிருக்கேன் */
-  }
-
-  .contact {
-    padding: 60px 20px;
+    transform: none !important;
   }
 
   .contact-form {
@@ -439,6 +475,8 @@ body {
   .contact-form textarea {
     font-size: 16px;
     padding: 12px;
+    background: #111827 !important;
+    color: white;
   }
 
   .social-icons {

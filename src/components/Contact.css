@@ -4,6 +4,7 @@
   align-items:center;
   gap:60px;
   flex-wrap:wrap;
+  background-color:  linear-gradient(to right, #000000, #0f172a);
 }
 
 .contact-info{
@@ -12,6 +13,7 @@
   justify-content:center;
   align-items:center;
   gap:25px;
+  background-color:  linear-gradient(to right, #000000, #0f172a);;
 }
 
 
@@ -179,11 +181,13 @@
   .contact-container{
     flex-direction:column;
     gap:35px;
+    
   }
 
   .contact-form{
     width:100%;
     padding:25px;
+    background-color:  linear-gradient(to right, #000000, #0f172a);
   }
 
   .info-card{
