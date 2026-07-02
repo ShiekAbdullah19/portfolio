@@ -1,6 +1,7 @@
 import "./Projects.css";
 import ecommerceImg from "../assets/ecommerce.png";
 import portfolioImg from "../assets/portfolio.png";
+import gymbrosImg from "../assets/gymbros.png";
 import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
@@ -23,7 +24,20 @@ function Projects() {
       github: "https://github.com/ShiekAbdullah19/portfolio.git",
       live: "https://portfolio-lilac-psi-4295372cxd.vercel.app/",
       tech: ["React", "CSS", "Vercel", "MongoDB"]
+    },
+    
+    {
+      title: "Gymbros Website",
+      description:
+        "Gymbros, a high-performance, fully responsive premium fitness website.",
+      image: gymbrosImg,
+      github: "https://github.com/ShiekAbdullah19/Gym-Website-CRM",
+      live: "https://gym-website-new-peach.vercel.app/",
+      tech: ["HTML", "CSS", "Javascript",]
+
     }
+  
+    
   ];
 
   const containerVariants = {
@@ -96,6 +110,7 @@ function Projects() {
       </motion.div>
     </motion.section>
   );
+  
 }
 
 export default Projects;
