@@ -25,7 +25,6 @@ function Projects() {
       live: "https://portfolio-lilac-psi-4295372cxd.vercel.app/",
       tech: ["React", "CSS", "Vercel", "MongoDB"]
     },
-    
     {
       title: "Gymbros Website",
       description:
@@ -33,11 +32,8 @@ function Projects() {
       image: gymbrosImg,
       github: "https://github.com/ShiekAbdullah19/Gym-Website-CRM",
       live: "https://gym-website-new-peach.vercel.app/",
-      tech: ["HTML", "CSS", "Javascript",]
-
+      tech: ["HTML", "CSS", "Javascript"]
     }
-  
-    
   ];
 
   const containerVariants = {
@@ -81,7 +77,6 @@ function Projects() {
             key={index}
             variants={cardVariants}
           >
-            {/* Image Wrapper with Contain property support */}
             <div className="project-image-wrapper">
               <img src={project.image} alt={project.title} />
             </div>
@@ -110,7 +105,6 @@ function Projects() {
       </motion.div>
     </motion.section>
   );
-  
 }
 
 export default Projects;

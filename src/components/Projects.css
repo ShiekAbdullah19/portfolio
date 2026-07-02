@@ -26,14 +26,14 @@
   line-height: 1.8;
 }
 
-/* Flex Grid Engine optimized for 2 elements center alignment */
+/* FIX: Increased max-width to allow 3 cards to sit horizontally in one line bro */
 .projects-container {
   display: flex;
   justify-content: center;
   align-items: stretch;
   flex-wrap: wrap;
   gap: 35px;
-  max-width: 1200px;
+  max-width: 1300px; /* 1200px to 1300px updated! */
   margin: 0 auto;
 }
 
@@ -48,7 +48,7 @@
   display: flex;
   flex-direction: column;
   text-align: left;
-  width: 380px; /* Perfect card spacing matrix */
+  width: 380px; 
 }
 
 .project-card:hover {
@@ -57,12 +57,11 @@
   box-shadow: 0 15px 40px rgba(0, 243, 255, 0.1);
 }
 
-/* Image Contain Engine Setup - fixed your screenshot layout issue bro */
 .project-image-wrapper {
   width: 100%;
   height: 220px;
-  background: rgba(15, 23, 42, 0.6); /* Sleek inner dark contrast background */
-  padding: 15px; /* Gives nice breathing room around your dashboard images */
+  background: rgba(15, 23, 42, 0.6); 
+  padding: 15px; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -73,13 +72,13 @@
 .project-card img {
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain; /* Image content will never crop or cut now bro! */
-  border-radius: 10px; /* Soft edges inside the frame */
+  object-fit: contain; 
+  border-radius: 10px; 
   transition: transform 0.4s ease;
 }
 
 .project-card:hover img {
-  transform: scale(1.04); /* Subtle smooth upscale inside containment */
+  transform: scale(1.04); 
 }
 
 .project-content {
