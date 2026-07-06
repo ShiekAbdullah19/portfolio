@@ -4,7 +4,7 @@
   color: white;
   text-align: center;
   overflow: hidden;
-margin-top: -50px;
+  margin-top: -50px;
 }
 
 .skills h1 {
@@ -81,11 +81,10 @@ margin-top: -50px;
   gap: 12px;
 }
 
-/* Updated Tag Layout Structure to fit Icons */
 .skill-tag {
   display: flex;
   align-items: center;
-  gap: 10px; /* Space between logo and text */
+  gap: 10px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.07);
   padding: 10px 16px;
@@ -97,7 +96,7 @@ margin-top: -50px;
 .tag-icon {
   display: flex;
   align-items: center;
-  font-size: 20px; /* Optimal icon sizing matrix */
+  font-size: 20px;
   color: #94a3b8;
   transition: color 0.3s ease, transform 0.3s ease;
 }
@@ -109,7 +108,6 @@ margin-top: -50px;
   transition: color 0.3s ease;
 }
 
-/* Dynamic Hover Logic: Uses the exact brand color passed from JSX! */
 .skill-tag:hover {
   background: rgba(15, 23, 42, 0.8);
   border-color: var(--hover-color);
@@ -118,7 +116,7 @@ margin-top: -50px;
 }
 
 .skill-tag:hover .tag-icon {
-  color: var(--hover-color); /* Icon turns into its original official brand color! */
+  color: var(--hover-color);
   transform: scale(1.1);
 }
 
@@ -126,7 +124,6 @@ margin-top: -50px;
   color: #ffffff;
 }
 
-/* Responsive Fluid Adjustments */
 @media (max-width: 1024px) {
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);

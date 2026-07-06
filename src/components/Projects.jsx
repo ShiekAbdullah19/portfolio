@@ -2,11 +2,21 @@ import "./Projects.css";
 import ecommerceImg from "../assets/ecommerce.png";
 import portfolioImg from "../assets/portfolio.png";
 import gymbrosImg from "../assets/gymbros.png";
+import aasifpilotImg from "../assets/aasifpilot.png"
 import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 function Projects() {
   const projects = [
+    {
+      title: "Aasif Pilot Website",
+      description:
+        "Aasif Pilot – AI SEO Analyzer & Rank Tracker (MERN Stack, Browserbase, Gemini AI). Developed a high-performance SEO platform integrating stealth web-scraping via Browserbase, Google Gemini AI audits, and autonomous Node-Cron SERP tracking with intuitive historical dashboards.",
+      image: aasifpilotImg, // Bro, unkitta aasif pilot image assets irundha inga import panni reference maathiko!
+      github: "https://github.com/ShiekAbdullah19/SEO-Ranking-Website", // Unga Github link update panniko bro
+      live: "https://seo-ranking-website-indol.vercel.app/", // Live URL testing check-ku potu vachuko bro
+      tech: ["MERN Stack", "Browserbase", "Gemini AI", "Node-Cron"]
+    },
     {
       title: "Ecommerce Website",
       description:

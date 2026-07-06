@@ -26,14 +26,14 @@
   line-height: 1.8;
 }
 
-/* FIX: Increased max-width to allow 3 cards to sit horizontally in one line bro */
+/* FIX: Set max-width to 900px so 4 cards perfectly split into a 2-by-2 grid bro */
 .projects-container {
   display: flex;
   justify-content: center;
   align-items: stretch;
   flex-wrap: wrap;
   gap: 35px;
-  max-width: 1300px; /* 1200px to 1300px updated! */
+  max-width: 900px; 
   margin: 0 auto;
 }
 

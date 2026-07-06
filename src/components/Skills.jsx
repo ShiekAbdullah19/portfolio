@@ -6,12 +6,11 @@ import {
   FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaNodeJs, FaPython, FaGitAlt, FaGithub, FaFigma, FaAndroid 
 } from "react-icons/fa";
 import { 
-  SiTailwindcss, SiMongodb, SiExpress, SiFastapi, SiCloudinary, SiVercel, SiVite 
+  SiTailwindcss, SiMongodb, SiExpress, SiFastapi, SiCloudinary, SiVercel, SiVite, SiGoogle // FIX: SiGoogleapi-க்கு பதிலா SiGoogle மாத்தியாச்சு bro!
 } from "react-icons/si";
-import { MdDevices, MdApi } from "react-icons/md";
+import { MdDevices, MdApi, MdTerminal } from "react-icons/md";
 
 function Skills() {
-  // Mapping each skill item with its precise components and matching neon glow variables[cite: 2]
   const skillCategories = [
     {
       category: "Frontend Development",
@@ -30,6 +29,7 @@ function Skills() {
         { name: "Node.js", icon: <FaNodeJs />, color: "#3ee226" },
         { name: "Express.js", icon: <SiExpress />, color: "#ffffff" },
         { name: "FastAPI", icon: <SiFastapi />, color: "#059669" },
+        { name: "Browserbase", icon: <MdTerminal />, color: "#ffaa00" },
         { name: "MongoDB Atlas", icon: <SiMongodb />, color: "#47a248" },
         { name: "Mongoose", icon: <SiMongodb />, color: "#880000" },
         { name: "REST API", icon: <MdApi />, color: "#00f3ff" }
@@ -39,6 +39,7 @@ function Skills() {
       category: "Languages & Tools",
       items: [
         { name: "Python", icon: <FaPython />, color: "#3776ab" },
+        { name: "Gemini AI", icon: <SiGoogle />, color: "#1a73e8" }, // FIX: Icon changed to SiGoogle bro!
         { name: "Cloudinary", icon: <SiCloudinary />, color: "#3448c5" },
         { name: "Git & GitHub", icon: <FaGitAlt />, color: "#f1502f" },
         { name: "Vercel", icon: <SiVercel />, color: "#ffffff" },
@@ -102,7 +103,7 @@ function Skills() {
                 <div 
                   className="skill-tag" 
                   key={sIdx}
-                  style={{ "--hover-color": skill.color }} // Passing brand color dynamically to CSS
+                  style={{ "--hover-color": skill.color }}
                 >
                   <span className="tag-icon">{skill.icon}</span>
                   <span className="tag-name">{skill.name}</span>
